@@ -1,3 +1,4 @@
+# CLIENT_IMAGE should point at a published Portflare client image.
 ARG CLIENT_IMAGE=ghcr.io/portflare/client:latest
 FROM ${CLIENT_IMAGE} AS client
 

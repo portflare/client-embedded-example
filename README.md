@@ -2,7 +2,13 @@
 
 This repository contains a small example image that embeds the Portflare client alongside an application.
 
-It is meant to demonstrate the embedded-container pattern separately from the main client repository.
+It demonstrates the embedded-container pattern separately from the main client repository so the example image can have its own docs, build pipeline, and release flow.
+
+Related repositories:
+
+- [`github.com/portflare/client`](https://github.com/portflare/client) — the reusable client daemon image and source
+- [`github.com/portflare/server`](https://github.com/portflare/server) — the Portflare server and control plane
+- [`github.com/portflare/protocol`](https://github.com/portflare/protocol) — shared wire-level types and validation helpers
 
 ## What is here
 
@@ -22,7 +28,7 @@ To pin a different client image:
 
 ```bash
 docker build \
-  --build-arg CLIENT_IMAGE=ghcr.io/portflare/client:sha-abcdef0 \
+  --build-arg CLIENT_IMAGE=ghcr.io/portflare/client:v0.1.1 \
   -t ghcr.io/portflare/client-embedded-example:dev .
 ```
 
@@ -45,4 +51,4 @@ Use this as a starting point when you want one container image that:
 - runs `reverse-client`
 - automatically exposes the app through Portflare
 
-If you only need the client daemon itself, use `github.com/portflare/client` instead.
+If you only need the client daemon itself, use [`github.com/portflare/client`](https://github.com/portflare/client) instead.
