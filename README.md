@@ -20,12 +20,6 @@ Related repositories:
 
 By default the image copies `reverse-client` from `ghcr.io/portflare/client:latest`.
 
-If the client package is private, authenticate to GHCR before building:
-
-```bash
-docker login ghcr.io
-```
-
 ```bash
 docker build -t ghcr.io/portflare/client-embedded-example:dev .
 ```
