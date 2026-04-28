@@ -12,13 +12,13 @@ Related repositories:
 
 ## What is here
 
-- `Dockerfile`: example image that bundles `reverse-client` with a sample HTTP app
+- `Dockerfile`: example image that bundles `portflare` with a sample HTTP app
 - `bin/embedded-entrypoint.sh`: starts the client daemon and then the app
 - `docs/usage.md`: how to build, run, and adapt the example
 
 ## Build
 
-By default the image copies `reverse-client` from `ghcr.io/portflare/client:latest`.
+By default the image copies `portflare` from `ghcr.io/portflare/client:latest`.
 
 ```bash
 docker build -t ghcr.io/portflare/client-embedded-example:dev .
@@ -48,7 +48,7 @@ The sample app listens on port `3000` and the embedded client auto-discovers and
 Use this as a starting point when you want one container image that:
 
 - runs your app
-- runs `reverse-client`
+- runs `portflare`
 - automatically exposes the app through Portflare
 
 If you only need the client daemon itself, use [`github.com/portflare/client`](https://github.com/portflare/client) instead.

@@ -4,7 +4,7 @@
 
 This image demonstrates the embedded-client pattern:
 
-- `reverse-client daemon` runs in the background
+- `portflare daemon` runs in the background
 - your application runs as the main process
 - the client discovers the app and registers it with Portflare
 

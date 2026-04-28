@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-reverse-client daemon &
+portflare daemon &
 client_pid=$!
 
 cleanup() {

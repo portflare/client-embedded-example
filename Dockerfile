@@ -5,7 +5,7 @@ FROM ${CLIENT_IMAGE} AS client
 FROM node:22-bookworm-slim
 WORKDIR /app
 RUN npm install -g http-server
-COPY --from=client /usr/local/bin/reverse-client /usr/local/bin/reverse-client
+COPY --from=client /usr/local/bin/portflare /usr/local/bin/portflare
 COPY bin/embedded-entrypoint.sh /usr/local/bin/embedded-entrypoint.sh
 RUN chmod +x /usr/local/bin/embedded-entrypoint.sh
 RUN printf '%s\n' '<!doctype html><html><body><h1>Portflare embedded example</h1></body></html>' > /app/index.html
