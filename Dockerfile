@@ -9,11 +9,11 @@ COPY --from=client /usr/local/bin/portflare /usr/local/bin/portflare
 COPY bin/embedded-entrypoint.sh /usr/local/bin/embedded-entrypoint.sh
 RUN chmod +x /usr/local/bin/embedded-entrypoint.sh
 RUN printf '%s\n' '<!doctype html><html><body><h1>Portflare embedded example</h1></body></html>' > /app/index.html
-ENV REVERSE_CLIENT_LISTEN_ADDR=127.0.0.1:9901
-ENV REVERSE_CLIENT_DISCOVER=true
-ENV REVERSE_CLIENT_DISCOVER_ALLOW=3000
-ENV REVERSE_CLIENT_DISCOVER_DENY=22,2375,2376
-ENV REVERSE_CLIENT_DISCOVER_NAMES=3000=web
+ENV PORTFLARE_CLIENT_LISTEN_ADDR=127.0.0.1:9901
+ENV PORTFLARE_CLIENT_DISCOVER=true
+ENV PORTFLARE_CLIENT_DISCOVER_ALLOW=3000
+ENV PORTFLARE_CLIENT_DISCOVER_DENY=22,2375,2376
+ENV PORTFLARE_CLIENT_DISCOVER_NAMES=3000=web
 EXPOSE 3000
 ENTRYPOINT ["/usr/local/bin/embedded-entrypoint.sh"]
 CMD ["http-server", ".", "-p", "3000"]
